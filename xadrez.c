@@ -50,5 +50,20 @@ int main() {
     }
     printf("\n");
 
+    printf("Movendo o Cavalo:\n");
+    int j; // Variável auxiliar para o loop alinhado do cavalo
+    for(int i=0; i< 2; i++){
+        j = 1;
+        printf("Baixo\n");
+        
+        while (i==1 && j==1) //Quando o i==1 o Cavalo já deu 2 passos em uma direção, quando o j==1 o Cavalo ainda tem um passo na direçõa perpendicular a realizar. 
+        {
+            printf("Esquerda\n");
+            j++; // Finaliza os passos do Cavalo.
+        }   
+
+    }
+    printf("\n");
+
     return 0;
 }
