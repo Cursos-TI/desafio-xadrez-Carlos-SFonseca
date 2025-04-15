@@ -4,6 +4,39 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void MoverTorre(int passos){ // Função recursiva para mover a Torre
+    if(passos>0){
+        printf("Direita\n");
+        MoverTorre(passos-1);
+    }
+
+}
+
+void MoverRainha(int passos){ // Função recursiva para mover a Rainha
+    if(passos>0){
+        printf("Esquerda\n");
+        MoverRainha(passos-1);
+    }
+
+}
+
+void MoverBispo(int passos){ // Função recursiva para mover o Bispo
+
+    if(passos>0){
+        int i = 0, j = 0; //variáveis auxiliares para os loops aninhadoss
+        do{
+            printf("Cima, ");
+
+            do{
+                printf("Direita\n");
+            }while (j>0);           
+            
+        }while(i>0);
+        MoverBispo(passos-1);
+    }
+}
+
+
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -33,33 +66,31 @@ int main() {
     int rainha = 8; //Quabtidade de passos da Rainha para Esquerda
 
     printf("Movendo a Torre:\n");
-    for(int i=0; i< torre; i++){
-        printf("Direita\n");
-    }
+    MoverTorre(torre);
     printf("\n");
 
     printf("Movendo o Bispo:\n");
-    for(int i=0; i< bispo; i++){
-        printf("Cima, Direita\n");
-    }
+    MoverBispo(bispo);
     printf("\n");
 
     printf("Movendo a Rainha:\n");
-    for(int i=0; i< rainha; i++){
-        printf("Esquerda\n");
-    }
+    MoverRainha(rainha);
     printf("\n");
 
     printf("Movendo o Cavalo:\n");
-    int j; // Variável auxiliar para o loop alinhado do cavalo
-    for(int i=0; i< 2; i++){
-        j = 1;
-        printf("Baixo\n");
+    
+    for(int i=0, j=0; i< 2; i++){ //movimentação do Cavalo utilizando loop com variáveis múltiplas, com o i controlando os primeiros 2 passos e o j controlando o passo perpendicular.
         
-        while (i==1 && j==1) //Quando o i==1 o Cavalo já deu 2 passos em uma direção, quando o j==1 o Cavalo ainda tem um passo na direçõa perpendicular a realizar. 
+        printf("Cima\n");
+
+        while (j==0) 
         {
-            printf("Esquerda\n");
-            j++; // Finaliza os passos do Cavalo.
+            if(i==0){
+                break;
+            }
+            printf("Direita\n");
+            j++;
+           
         }   
 
     }
